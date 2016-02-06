@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.neildanait.calorieconverter.CalorieHomeScreen"
+    tools:showIn="@layout/activity_calorie_home_screen"
+    android:id="@+id/CrunchTime"
+    android:background="@drawable/backgroundnew">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Exercise"
+        android:id="@+id/exercise"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Duration (Reps / Minutes)"
+        android:id="@+id/duration"
+        android:layout_below="@+id/exerciseList"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="31dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/exerciseList"
+        android:spinnerMode="dropdown"
+        android:entries="@array/exerciseTypes"
+        android:layout_below="@+id/exercise"
+        android:layout_alignStart="@+id/calories"
+        android:layout_alignEnd="@+id/duration" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/durationElement"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/viewEquivalencies"
+        android:layout_alignEnd="@+id/caloriesElement"
+        android:layout_below="@+id/duration" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Convert"
+        android:id="@+id/convertButton"
+        android:layout_below="@+id/caloriesElement"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="35dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Calories"
+        android:id="@+id/calories"
+        android:layout_below="@+id/weightElement"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="37dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/caloriesElement"
+        android:layout_below="@+id/calories"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/weightElement" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Comparisons"
+        android:id="@+id/viewEquivalencies"
+        android:layout_below="@+id/convertButton"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Weight (lbs)"
+        android:id="@+id/weight"
+        android:layout_above="@+id/weightElement"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/weightElement"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/weight"/>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calorieComparisons"
+        android:choiceMode="none"
+        android:layout_alignTop="@+id/durationElement"
+        android:layout_toEndOf="@+id/viewEquivalencies"
+        android:layout_above="@+id/imageView3" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/bear"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/duration"
+        android:layout_toEndOf="@+id/duration" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView3"
+        android:src="@drawable/crunchtime"
+        android:layout_alignBottom="@+id/viewEquivalencies"
+        android:layout_alignTop="@+id/calories"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/viewEquivalencies" />
+
+</RelativeLayout>
